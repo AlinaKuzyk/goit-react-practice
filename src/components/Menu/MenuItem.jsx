@@ -1,4 +1,13 @@
-const MenuItem = ({name,link, image}) => {
-	return (	<li><a href={link}><img src={image} alt={name} />{name}</a></li>)}
+import PropTypes from 'prop-types';
+
+const MenuItem = ({ name, link, image }) => {
+
+   return (<li><a href={link}>{ image}{name}</a></li>)}
 	
-	export default MenuItem
+export default MenuItem
+   
+MenuItem.propTypes = {
+   name: PropTypes.string.isRequired,
+   link: PropTypes.string.isRequired,
+   image: PropTypes.object.isRequired,
+   }

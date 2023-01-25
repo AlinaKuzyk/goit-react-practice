@@ -1,4 +1,4 @@
-import { Paper } from "components"
+import PropTypes from 'prop-types';
 import css from './UniversityCard.module.css'
 import universityIcon from '../../assets/images/mock-university.svg'
 import editButtonIcon from '../../assets/images/edit.svg'
@@ -27,3 +27,9 @@ const UniversityCard = ({name, onDelete, onEdit}) => {
 }
 
 export default UniversityCard
+
+UniversityCard.propTypes = {
+   name: PropTypes.string.isRequired,
+   onDelete: PropTypes.func,
+   onEdit: PropTypes.func
+}

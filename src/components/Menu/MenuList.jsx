@@ -4,7 +4,7 @@ import { menuConfig } from "constants/menu"
 
 
 const MenuList = () => {
-	console.log(menuConfig)
+	// console.log(menuConfig)
 return (<nav>
 	<ul>
 		{menuConfig.map(({name, link, img}) => 

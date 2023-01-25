@@ -1,4 +1,4 @@
-import { SideBar, Main, Paper, UniversityCard } from '../components';
+import { SideBar, Main, Paper, UniversityCard, TutorList } from '../components';
 import universityData from '../constants/universityData.json'
 
 export const App = () => {
@@ -18,7 +18,10 @@ export const App = () => {
               onDelete={ onDelete} />
         <Paper>
               <span>{ universityData.description}</span>
-        </Paper>
+           </Paper>
+
+           <TutorList tutors={universityData.tutors}  />
+         
       </Main>
     </div>
   );
