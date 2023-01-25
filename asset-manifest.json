@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/goit-react-practice/static/css/main.903d3ecd.css",
-    "main.js": "/goit-react-practice/static/js/main.ba19a38d.js",
-    "static/media/faculties-icon.svg": "/goit-react-practice/static/media/faculties-icon.12acb9717b7065272c8041de24eb490c.svg",
-    "static/media/mock-user-ava.svg": "/goit-react-practice/static/media/mock-user-ava.dc938224d592de20b85ec3d88f5d791b.svg",
+    "main.css": "/goit-react-practice/static/css/main.970f2282.css",
+    "main.js": "/goit-react-practice/static/js/main.e9e0266f.js",
+    "static/media/mock-university.svg": "/goit-react-practice/static/media/mock-university.650dfc1db07a57b5376badfdaf40c154.svg",
+    "static/media/delete.svg": "/goit-react-practice/static/media/delete.677d38a82de5abc1f9234f87ea3bf592.svg",
+    "static/media/edit.svg": "/goit-react-practice/static/media/edit.1ccf0f6fedc395fb09177a40acb5b5d3.svg",
     "index.html": "/goit-react-practice/index.html",
-    "static/media/university-icon.svg": "/goit-react-practice/static/media/university-icon.55603ce28345549d65a14a63969995e0.svg",
-    "main.903d3ecd.css.map": "/goit-react-practice/static/css/main.903d3ecd.css.map",
-    "main.ba19a38d.js.map": "/goit-react-practice/static/js/main.ba19a38d.js.map"
+    "main.970f2282.css.map": "/goit-react-practice/static/css/main.970f2282.css.map",
+    "main.e9e0266f.js.map": "/goit-react-practice/static/js/main.e9e0266f.js.map"
   },
   "entrypoints": [
-    "static/css/main.903d3ecd.css",
-    "static/js/main.ba19a38d.js"
+    "static/css/main.970f2282.css",
+    "static/js/main.e9e0266f.js"
   ]
 }
