@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/goit-react-practice/static/css/main.903d3ecd.css",
+    "main.js": "/goit-react-practice/static/js/main.ba19a38d.js",
+    "static/media/faculties-icon.svg": "/goit-react-practice/static/media/faculties-icon.12acb9717b7065272c8041de24eb490c.svg",
+    "static/media/mock-user-ava.svg": "/goit-react-practice/static/media/mock-user-ava.dc938224d592de20b85ec3d88f5d791b.svg",
+    "index.html": "/goit-react-practice/index.html",
+    "static/media/university-icon.svg": "/goit-react-practice/static/media/university-icon.55603ce28345549d65a14a63969995e0.svg",
+    "main.903d3ecd.css.map": "/goit-react-practice/static/css/main.903d3ecd.css.map",
+    "main.ba19a38d.js.map": "/goit-react-practice/static/js/main.ba19a38d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.903d3ecd.css",
+    "static/js/main.ba19a38d.js"
+  ]
+}
