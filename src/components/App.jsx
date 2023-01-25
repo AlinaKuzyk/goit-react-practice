@@ -1,20 +1,23 @@
-import { SideBar, Main, Paper } from '../components';
+import { SideBar, Main, Paper, UniversityCard } from '../components';
+import universityData from '../constants/universityData.json'
 
 export const App = () => {
+   console.log(universityData)
+   // логика для кнопки Edit
+   const onEdit = () => console.log('Edit')
+   const onDelete = () => console.log('Delete')
+
+
+
   return (
     <div className="app">
       <SideBar></SideBar>
       <Main>
-        <Paper>Paper from ....</Paper>
+           <UniversityCard name={universityData.name}
+              onEdit={onEdit}
+              onDelete={ onDelete} />
         <Paper>
-          Опыт, концентрат знаний и возможность избежать большинство ошибок при
-          приеме на работу. Мы знаем, что хотят большинство локальных и
-          иностранных компаний и можем вам это дать. А еще мы постоянно
-          совершенствуем наши курсы программирования, добавляя туда что-то
-          новое. Вы можете лично ознакомиться с историями успеха наших
-          выпускников, чтобы убедиться в эффективности нашей методики обучения.
-          Да, мы начнем с азов и самой простой информации. Знаем, что
-          большинство людей приходят к нам с нулевыми знаниями.{' '}
+              <span>{ universityData.description}</span>
         </Paper>
       </Main>
     </div>
