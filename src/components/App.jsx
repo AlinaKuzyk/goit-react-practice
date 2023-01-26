@@ -1,30 +1,67 @@
-import { SideBar, Main, Paper, UniversityCard, TutorList } from '../components';
+import { Component } from 'react';
+import { SideBar, Main, Paper, UniversityCard, TutorList, Section, GeneralCardList, Button } from '../components';
 import universityData from '../constants/universityData.json'
+import tutorIcon from '../assets/images/teachers-emoji.png'
 
-export const App = () => {
-   console.log(universityData)
+
+class App extends Component {
+
+   state = {
+      cities: universityData.cities.map((city) => ({
+         text: city,
+      })) ?? [],
+
+      departments: universityData.department.map(({ name }) => ({
+         text: name,
+      })) ?? [],
+
+     tutors: universityData.tutors ?? [],
+   }
+
    // логика для кнопки Edit
-   const onEdit = () => console.log('Edit')
-   const onDelete = () => console.log('Delete')
+    onEdit = () => console.log('Edit')
+   onDelete = () => console.log('Delete')
+   onToggleMenu =() => console.log('Card')
 
-
-
-  return (
-    <div className="app">
+   render() {
+      // console.log(this.state.cities)
+      // console.log(this.state.departments)
+      //  console.log(universityData)
+      const {cities, departments,tutors } = this.state
+      return (
+         <div className="app">
       <SideBar></SideBar>
-      <Main>
-           <UniversityCard name={universityData.name}
-              onEdit={onEdit}
-              onDelete={ onDelete} />
-        <Paper>
+        <Main>
+           <Section isRightPosition isRow title='Информация о университете'>
+              <UniversityCard name={universityData.name}
+              onEdit={this.onEdit}
+              onDelete={this.onDelete} />
+           
+            <Paper>
               <span>{ universityData.description}</span>
            </Paper>
+           </Section>
+           
+       
+        <Section image={tutorIcon } title='Преподаватели'>
+                  <TutorList tutors={tutors} />
+                  <Button text='Добавить преподавателя' icon/>
+           </Section>
 
-           <TutorList tutors={universityData.tutors}  />
+           <Section>
+                  <GeneralCardList listData={cities} isOpenDropDown={this.onToggleMenu} />
+                   <Button text='Добавить город' icon/>
+           </Section>
+
+            <Section>
+                  <GeneralCardList listData={departments} isOpenDropDown={this.onToggleMenu} />
+                  <Button text='Добавить факультет' icon/>
+           </Section>
          
       </Main>
     </div>
-  );
-};
+      )
+   }
+}
 
 export default App;
