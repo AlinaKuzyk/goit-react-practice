@@ -1,6 +1,6 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import { FieldStyled, ErrMessage } from './TutorFormStyled.styled';
-import { object, string, number, date, InerType } from 'yup';
+import { object, string, number } from 'yup';
 import { Button } from 'components';
 
 const fieldsData = [
