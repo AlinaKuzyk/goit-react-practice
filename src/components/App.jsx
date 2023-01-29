@@ -32,6 +32,7 @@ class App extends Component {
   onEdit = () => console.log('Edit');
   onDelete = () => console.log('Delete');
   onToggleMenu = () => console.log('Card');
+  // логика для кнопки addTutor
   addTutor = tutor => {
     this.setState(({ tutors }) => {
       return {
