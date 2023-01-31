@@ -1,3 +1,4 @@
 import styled from "styled-components";
 
-export const GeneralCardListStyled = styled.section``
+export const Item = styled.li`
+position: relative`
