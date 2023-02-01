@@ -11,6 +11,7 @@ const InfoForm = ({ onSubmit, title, placeholder }) => {
 
     //   в values будет обьект с заполненными данными о преподавателе
     //  console.log(values);
+    onSubmit(values.name);
     resetForm();
     setSubmitting(false);
   };
@@ -25,13 +26,7 @@ const InfoForm = ({ onSubmit, title, placeholder }) => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
-      {({
-        values,
-
-        handleChange,
-        handleBlur,
-        handleSubmit,
-      }) => (
+      {({ values, handleChange, handleBlur, handleSubmit }) => (
         <Form>
           <div>
             <h3>{title}</h3>

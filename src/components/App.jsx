@@ -30,12 +30,9 @@ class App extends Component {
 
     tutors: universityData.tutors ?? [],
     showForm: null,
+    isModalOpen: null,
   };
 
-  // логика для кнопки Edit
-  onEdit = () => console.log('Edit');
-  onDelete = () => console.log('Delete');
-  onToggleMenu = () => console.log('Card');
   // логика для кнопки addTutor
   addTutor = tutor => {
     this.setState(({ tutors }) => {
@@ -57,19 +54,51 @@ class App extends Component {
     this.setState(prev => ({ showForm: prev.showForm === name ? null : name }));
   };
 
+  addCity = name => {
+    if (
+      this.state.cities.some(
+        city => city.text.toLowerCase() === name.toLowerCase()
+      )
+    ) {
+      alert('This city exist');
+    } else {
+      const newCity = { text: name };
+      this.setState(prev => ({
+        cities: [...prev.cities, newCity],
+      }));
+    }
+  };
+
+  addDepartment = name => {
+    if (
+      this.state.departments.some(
+        department => department.text.toLowerCase() === name.toLowerCase()
+      )
+    ) {
+      alert('This department exist');
+    } else {
+      const newDepartment = { text: name };
+      this.setState(prev => ({
+        departments: [...prev.departments, newDepartment],
+      }));
+    }
+  };
+
   handleDeleteCard = (id, relation) => {
     //  console.log(relation);
     this.setState(prev => ({
-      relation: prev[relation].filter(({ text }) => text !== id),
+      [relation]: prev[relation].filter(({ text }) => text !== id),
     }));
+  };
+
+  toggleModal = action => {
+    this.setState({ isModalOpen: action });
   };
 
   render() {
     // console.log(this.state.cities)
     // console.log(this.state.departments)
-    //  console.log(universityData)
-    const { cities, departments, tutors } = this.state;
-    console.log(this.state.cities);
+    const { cities, departments, tutors, isModalOpen } = this.state;
     return (
       <div className="app">
         <SideBar></SideBar>
@@ -91,11 +120,10 @@ class App extends Component {
           )}
 
           <Section image={tutorIcon} title="Преподаватели">
-            <TutorList
-              onDeleteCard={this.handleDeleteCard}
-              deleteTutor={this.deleteTutor}
-              tutors={tutors}
-            />
+            <TutorList deleteTutor={this.deleteTutor} tutors={tutors} />
+            {this.state.showForm === 'tutor-form' && (
+              <TutorForm addTutor={this.addTutor} />
+            )}
             <Button
               action={() => this.handleShowForm('tutor-form')}
               text={
@@ -112,9 +140,15 @@ class App extends Component {
               onDeleteCard={this.handleDeleteCard}
               listData={cities}
               isOpenDropDown={this.onToggleMenu}
+              toggleModal={this.toggleModal}
+              isModalOpen={isModalOpen}
             />
             {this.state.showForm === 'city-form' && (
-              <InfoForm title="Добавление города" placeholder="город" />
+              <InfoForm
+                title="Добавление города"
+                placeholder="город"
+                onSubmit={this.addCity}
+              />
             )}
             <Button
               action={() => this.handleShowForm('city-form')}
@@ -132,9 +166,15 @@ class App extends Component {
               onDeleteCard={this.handleDeleteCard}
               listData={departments}
               isOpenDropDown={this.onToggleMenu}
+              toggleModal={this.toggleModal}
+              isModalOpen={isModalOpen}
             />
             {this.state.showForm === 'department-form' && (
-              <InfoForm title="Добавление филиала" placeholder="филиал" />
+              <InfoForm
+                title="Добавление филиала"
+                placeholder="филиал"
+                onSubmit={this.addDepartment}
+              />
             )}
             <Button
               action={() => this.handleShowForm('department-form')}

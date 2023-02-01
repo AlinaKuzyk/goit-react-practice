@@ -1,7 +1,12 @@
 import GeneralCardItem from './GeneralCardItem';
 
-const GeneralCardList = ({ listData, isOpenDropDown, onDeleteCard }) => {
-  // console.log(listData)
+const GeneralCardList = ({
+  listData,
+  isOpenDropDown,
+  onDeleteCard,
+  toggleModal,
+  isModalOpen,
+}) => {
   return (
     <ul>
       {listData.map(({ text, relation }) => (
@@ -12,6 +17,8 @@ const GeneralCardList = ({ listData, isOpenDropDown, onDeleteCard }) => {
           isOpenDropDown={isOpenDropDown}
           onDeleteCard={onDeleteCard}
           relation={relation}
+          toggleModal={toggleModal}
+          isModalOpen={isModalOpen}
         />
       ))}
     </ul>
